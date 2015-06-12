@@ -1,0 +1,6 @@
+*.bak
+*.swp
+*.swo
+*.log
+*~
+.DS_Store
