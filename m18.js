@@ -15,18 +15,67 @@ request.send()
 */
 document.addEventListener('DOMContentLoaded', function() {
 
-    var reader = new FileReader(),
-        image = new Image(),
-        file = document.getElementById('file'),
+    var file = document.getElementById('file'),
         canvas = document.getElementById('canvas'),
         download = document.getElementById('download'),
         select = document.getElementById('select'),
+        enter = document.getElementById('enter'),
         chinese = document.getElementById('chinese'),
         english = document.getElementById('english');
 
+    var reader = new FileReader(),
+        image = new Image(),
+        fileData,
+        context;
+
     select.addEventListener('click', function() {
         file.click()
-    }, false)        
+    }, false)
+
+    file.addEventListener('change', function(e) {
+        fileData = e.target.files[0];
+        select.innerHTML = fileData.name;
+    })
+
+    enter.addEventListener('click', function() {
+        if (!fileData) {
+            alert('please select an image')
+            return;
+        }
+
+        reader.readAsDataURL(fileData)
+        reader.onload = function(e) {
+            image.src = e.target.result;
+            image.onload = function() {
+                img2canvas()
+            }
+        }
+    }, false)
+
+    function img2canvas() {
+        canvas.width = image.width;
+        canvas.height = image.height;
+
+        context = canvas.getContext('2d');
+        context.drawImage(image, 0, 0)
+    }
+
+    select.addEventListener('dragover', function(e) {
+        e.preventDefault()
+        this.style.background = '#eee';
+    }, false)
+
+    select.addEventListener('dragleave', function(e) {
+        e.preventDefault()
+        this.style.background = '#fff';
+    }, false)
+
+    select.addEventListener('drop', function(e) {
+        e.preventDefault()
+        fileData = e.dataTransfer.files[0];
+        this.innerHTML = fileData.name;
+        this.style.background = '#fff';
+    }, false)
 
 })
 
