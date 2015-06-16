@@ -1,9 +1,6 @@
-var cn = "太容易的路，可能根本不能带你去任何地方",
-    en = "Too easy way, may simply can't take you anywhere";
 
-
-//request.open('GET', 'http://www/test.php?q='+ decodeURIComponent(cn), true)
-//request.open('GET', 'http://lorem.themex.net/api/data.php?f=rand', true)
+var api = 'http://lorem.themex.net/api/';
+//var api = 'http://www/';
 
 function ajax(url, callback, error) {
     var request = new XMLHttpRequest();
@@ -40,7 +37,24 @@ document.addEventListener('DOMContentLoaded', function() {
         context;
 
     rand.addEventListener('click', function() {
+        ajax(api +'data.php?f=rand', function(data) {
+            chinese.value = JSON.parse(data).hitokoto
+        }, function() {
+            alert('rand api wrong')
+        })
+    }, false)
 
+    translate.addEventListener('click', function() {
+        var cn = chinese.value;
+        if (cn.length <= 0) {
+            alert('no chinese')
+            return
+        }
+        ajax(api +'data.php?f=translate&q='+ decodeURIComponent(cn), function(data) {
+            english.value = JSON.parse(data).translation[0]
+        }, function() {
+            alert('translate api wrong')
+        })
     }, false)
 
     select.addEventListener('click', function() {
