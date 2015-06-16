@@ -1,17 +1,26 @@
 var cn = "太容易的路，可能根本不能带你去任何地方",
     en = "Too easy way, may simply can't take you anywhere";
 
-var request = new XMLHttpRequest();
-//request.open('GET', 'http://www/test.php?q='+ decodeURIComponent(cn), true)
-request.open('GET', 'http://lorem.themex.net/api/data.php?f=rand', true)
 
-request.onload = function() {
-    if (request.status >= 200 && request.status < 400) {
-        console.log(request.responseText)
-    } else {
+//request.open('GET', 'http://www/test.php?q='+ decodeURIComponent(cn), true)
+//request.open('GET', 'http://lorem.themex.net/api/data.php?f=rand', true)
+
+function ajax(url, callback, error) {
+    var request = new XMLHttpRequest();
+    request.open('GET', url, true)
+
+    request.onload = function() {
+        if (request.status >= 200 && request.status < 400) {
+            callback(request.responseText)
+        } else {
+            error()
+        }
     }
+    request.onerror = function() {
+        error()
+    }
+    request.send()
 }
-request.send()
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -21,12 +30,18 @@ document.addEventListener('DOMContentLoaded', function() {
         select = document.getElementById('select'),
         enter = document.getElementById('enter'),
         chinese = document.getElementById('chinese'),
-        english = document.getElementById('english');
+        english = document.getElementById('english'),
+        rand = document.getElementById('rand'),
+        translate = document.getElementById('translate');
 
     var reader = new FileReader(),
         image = new Image(),
         fileData,
         context;
+
+    rand.addEventListener('click', function() {
+
+    }, false)
 
     select.addEventListener('click', function() {
         file.click()
