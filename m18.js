@@ -1,9 +1,9 @@
 var cn = "太容易的路，可能根本不能带你去任何地方",
     en = "Too easy way, may simply can't take you anywhere";
 
-/*
 var request = new XMLHttpRequest();
-request.open('GET', 'http://www/test.php?q='+ decodeURIComponent(cn), true)
+//request.open('GET', 'http://www/test.php?q='+ decodeURIComponent(cn), true)
+request.open('GET', 'http://lorem.themex.net/api/data.php?f=rand', true)
 
 request.onload = function() {
     if (request.status >= 200 && request.status < 400) {
@@ -12,7 +12,7 @@ request.onload = function() {
     }
 }
 request.send()
-*/
+
 document.addEventListener('DOMContentLoaded', function() {
 
     var file = document.getElementById('file'),
