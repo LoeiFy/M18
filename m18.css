@@ -7,8 +7,18 @@ body {
     height: 0;
     opacity: 0;
 }
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
 #select {
-    padding: 100px 0;
     text-align: center;
-    border: 1px solid #eee;
+    height: 200px;
+    border: 2px dashed rgb(123, 130, 145);
+    line-height: 196px;
+    margin-top: 70px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }

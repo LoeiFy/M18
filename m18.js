@@ -1,6 +1,6 @@
 
-var api = 'http://lorem.themex.net/api/';
-//var api = 'http://www/';
+//var api = 'http://lorem.themex.net/api/';
+var api = 'http://www/';
 
 function ajax(url, callback, error) {
     var request = new XMLHttpRequest();
