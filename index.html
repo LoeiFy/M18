@@ -9,10 +9,22 @@
 <body>
 <input type="file" id="file" accept="image/x-png, image/gif, image/jpeg"/>
 
-<div class="center" id="select">Drag images here or browse to upload</div>
+<div class="center" id="select">拖动图片到这里或者点击这里选择图片 (JPG, PNG)</div>
 
-<p><input type="text" id="chinese" placeholder="中文字幕" /><span id="rand">随机</span></p>
-<p><input type="text" id="english" placeholder="英文字幕" /><span id="translate">翻译</span></p>
+<div class="center form">
+<p class="title">中文字幕<span>例如：太容易的路，可能根本不能带你去任何地方</span></p>
+<div>
+    <input type="text" id="chinese" /><!--
+ --><div id="rand">随机中文</div>
+</div>
+
+<p class="title">英文字幕<span>例如：Too easy way, may simply can't take you anywhere</span></p>
+<div>
+    <input type="text" id="english" /><!--
+ --><div id="translate">获取翻译</div>
+</div>
+</div>
+
 <div id="enter">确定</div>
 
 <canvas id="canvas"></canvas>

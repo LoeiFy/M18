@@ -1,5 +1,9 @@
 body {
     margin: 0;
+    font-family: Times, "Times New Roman", Georgia, serif;
+}
+p {
+    margin: 0;
 }
 #file {
     display: none;
@@ -21,4 +25,43 @@ body {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+    color: rgb(123, 130, 145);
+    font-size: 16px;
+}
+.title {
+    color: rgb(105, 108, 116);
+    font-size: 16px;
+    margin-top: 30px;
+}
+.title span {
+    margin-left: 14px;
+    font-size: 12px;
+    color: rgb(178, 181, 188);
+}
+.form > div {
+    position: relative;
+}
+input {
+    width: 100%;
+    display: block;
+    font-size: 14px;
+    padding: 10px 100px 10px 10px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    background: #fff;
+    color: rgb(105, 108, 116);
+    border: 2px solid rgb(221, 222, 226);
+    outline: none!important;
+    margin-top: 14px;
+}
+.form input + div {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-left: 2px solid rgb(221, 222, 226);
+    padding: 10px;
+    font-size: 14px;
+    color: rgb(178, 181, 188);
+    cursor: pointer;
 }
