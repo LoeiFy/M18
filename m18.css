@@ -65,3 +65,9 @@ input {
     color: rgb(178, 181, 188);
     cursor: pointer;
 }
+#enter {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    color: #fff;
+}
