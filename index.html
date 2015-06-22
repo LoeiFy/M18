@@ -9,6 +9,10 @@
 <body>
 <input type="file" id="file" accept="image/x-png, image/gif, image/jpeg"/>
 
+<div id="cover">
+    <a target="_blank" id="download"><canvas width="0" height="0" id="canvas"></canvas></a>
+</div>
+
 <h2 class="intr center">"足记"网页版</h2>
 
 <div class="center" id="select">拖动图片到这里或者点击这里选择图片 (JPG, PNG)</div>
@@ -30,9 +34,6 @@
 <div class="center">
     <div id="enter">生成图片</div>
 </div>
-
-<canvas id="canvas"></canvas>
-<a target="_blank" id="download"></a>
 
 <div id="note"><p></p></div>
 

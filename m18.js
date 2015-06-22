@@ -87,6 +87,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 // render image
                 canvas.width = image.width;
                 canvas.height = image.height;
+                canvas.style.width = image.width +'px';
+                canvas.style.height = image.height +'px';
 
                 context = canvas.getContext('2d');
                 context.drawImage(image, 0, 0)
@@ -111,6 +113,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 var enArea = context.measureText(en);
                 context.fillText(en, canvas.width / 2 - enArea.width / 2, canvas.height - 5 - 14 * 1.5)
+
+                // download link
+                download.href = canvas.toDataURL();
+
             }
         }
     }, false)

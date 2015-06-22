@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    padding-top: 50px;
+    padding: 50px 0;
     font-family: Times, "Times New Roman", Georgia, serif;
 }
 p, h2 {
@@ -106,6 +106,18 @@ input {
     color: #444;
     font-size: 24px;
     font-weight: normal;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     border-bottom: 1px solid #e8e8e8;
+}
+
+#canvas {
+    display: block;
+    max-width: 100%;
+}
+#cover {
+    margin-bottom: 30px;
+    text-align: center;
+}
+#cover a {
+    display: inline-block;
 }
