@@ -1,8 +1,9 @@
 body {
     margin: 0;
+    padding-top: 50px;
     font-family: Times, "Times New Roman", Georgia, serif;
 }
-p {
+p, h2 {
     margin: 0;
 }
 #file {
@@ -21,7 +22,7 @@ p {
     height: 200px;
     border: 2px dashed rgb(123, 130, 145);
     line-height: 196px;
-    margin-top: 70px;
+    margin-top: 40px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -68,6 +69,43 @@ input {
 #enter {
     display: inline-block;
     margin-top: 30px;
-    padding: 10px 20px;
+    padding: 7px 18px;
     color: #fff;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgb(30, 193, 133);
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}
+#note {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    -webkit-transition: opacity .2s;
+    -moz-transition: opacity .2s;
+    transition: opacity .2s;
+    width: 100%;
+}
+#note p {
+    display: inline-block;
+    font-size: 13px;
+    background: #fda647;
+    color: #fff;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-bottom-right-radius: 5px;
+    -moz-border-bottom-left-radius: 5px;
+    padding: 7px 20px 8px;
+}
+
+.intr {
+    color: #444;
+    font-size: 24px;
+    font-weight: normal;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e8e8e8;
 }
