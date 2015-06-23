@@ -115,9 +115,29 @@ input {
     max-width: 100%;
 }
 #cover {
-    margin-bottom: 30px;
+    margin: 30px 0;
     text-align: center;
 }
 #cover a {
     display: inline-block;
+}
+
+.info {
+    background: #f7f8f8;
+    color: #696c74;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin-top: 40px;
+}
+.info a {
+    color: #696c74;
+    text-decoration: underline;
 }
