@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         english = document.getElementById('english'),
         rand = document.getElementById('rand'),
         cover = document.getElementById('cover'),
+        back = document.getElementById('back'),
         translate = document.getElementById('translate');
 
     var reader = new FileReader(),
@@ -121,6 +122,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             }
         }
+    }, false)
+
+    back.addEventListener('click', function(e) {
+        cover.style.display = 'none';
     }, false)
 
     select.addEventListener('dragover', function(e) {

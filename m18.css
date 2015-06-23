@@ -67,6 +67,7 @@ input {
     cursor: pointer;
 }
 #enter {
+    cursor: pointer;
     display: inline-block;
     margin-top: 30px;
     padding: 7px 18px;
@@ -162,9 +163,9 @@ input {
     line-height: 22px;
     text-align: center;
     padding: 20px;
-    border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
