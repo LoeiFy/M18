@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
         chinese = document.getElementById('chinese'),
         english = document.getElementById('english'),
         rand = document.getElementById('rand'),
+        cover = document.getElementById('cover'),
         translate = document.getElementById('translate');
 
     var reader = new FileReader(),
@@ -87,8 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 // render image
                 canvas.width = image.width;
                 canvas.height = image.height;
-                canvas.style.width = image.width +'px';
-                canvas.style.height = image.height +'px';
+                //canvas.style.width = image.width +'px';
+                //canvas.style.height = image.height +'px';
 
                 context = canvas.getContext('2d');
                 context.drawImage(image, 0, 0)
@@ -116,6 +117,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // download link
                 download.href = canvas.toDataURL();
+                cover.style.display = 'block';
 
             }
         }
