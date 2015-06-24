@@ -19,6 +19,22 @@ function ajax(url, callback, error) {
     request.send()
 }
 
+function note(s) {
+    var t,
+        n = document.getElementById('note'), 
+        p = document.querySelectorAll('#note p')[0];
+
+    clearTimeout(t)
+    n.classList.remove('active')
+
+    p.innerHTML = s;
+    n.classList.add('active')
+
+    t = setTimeout(function() {
+        n.classList.remove('active')
+    }, 1500)
+}
+
 document.addEventListener('DOMContentLoaded', function() {
 
     var file = document.getElementById('file'),
@@ -66,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
     file.addEventListener('change', function(e) {
         fileData = e.target.files[0];
         select.innerHTML = fileData.name;
+        select.classList.add('active')
     })
 
     enter.addEventListener('click', function() {
@@ -73,12 +90,12 @@ document.addEventListener('DOMContentLoaded', function() {
             en = english.value;
 
         if (!fileData) {
-            alert('please select an image')
+            note('请选择图片')
             return
         }
 
         if (cn.length <= 0 || en.length <= 0) {
-            alert('no subtitle')
+            note('中英文字幕没有填写完整')
             return
         }
 
@@ -130,19 +147,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
     select.addEventListener('dragover', function(e) {
         e.preventDefault()
-        this.style.background = '#eee';
+        this.classList.add('active')
     }, false)
 
     select.addEventListener('dragleave', function(e) {
         e.preventDefault()
-        this.style.background = '#fff';
+        this.classList.remove('active')
     }, false)
 
     select.addEventListener('drop', function(e) {
         e.preventDefault()
         fileData = e.dataTransfer.files[0];
         this.innerHTML = fileData.name;
-        this.style.background = '#fff';
+        this.classList.add('active')
     }, false)
 
 })
