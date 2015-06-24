@@ -147,8 +147,16 @@ input:focus {
     background: rgba(255,255,255,.9);
     text-align: center;
     top: 0;
+    opacity: 0;
+    left: -100%;
     z-index: 10;
-    display: none;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+#cover.active {
+    left: 0;
+    opacity: 1;
 }
 #cover:before, #cover:after {
     display: inline-block;

@@ -1,6 +1,5 @@
 
-//var api = 'http://lorem.themex.net/api/';
-var api = 'http://www/';
+var api = 'http://lorem.themex.net/api/';
 
 function ajax(url, callback, error) {
     var request = new XMLHttpRequest();
@@ -140,14 +139,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // download link
                 download.href = canvas.toDataURL();
-                cover.style.display = 'block';
+                cover.classList.add('active')
 
             }
         }
     }, false)
 
     back.addEventListener('click', function(e) {
-        cover.style.display = 'none';
+        cover.classList.remove('active')
     }, false)
 
     select.addEventListener('dragover', function(e) {
