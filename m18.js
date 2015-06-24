@@ -53,15 +53,29 @@ document.addEventListener('DOMContentLoaded', function() {
         fileData,
         context;
 
+    var randMark = true, translateMark = true;
+
     rand.addEventListener('click', function() {
+        if (!randMark) return;
+        randMark = false;
+
+        note('加载中.. :)')
+
         ajax(api +'data.php?f=rand', function(data) {
             chinese.value = JSON.parse(data).hitokoto
+            randMark = true;
         }, function() {
             note('出错了，请自己填写中文吧 :)')
+            randMark = true;
         })
     }, false)
 
     translate.addEventListener('click', function() {
+        if (!translateMark) return;
+        translateMark = false;
+
+        note('加载中.. :)')
+
         var cn = chinese.value;
         if (cn.length <= 0) {
             note('没有要翻译的中文 :)')
@@ -74,8 +88,10 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 note('有道翻译有问题，请检查下文字或者自行翻译 :)')
             }
+            translateMark = true;
         }, function() {
             note('请求有道翻译挂了，请自行翻译 :)')
+            translateMark = true;
         })
     }, false)
 
