@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ajax(api +'data.php?f=rand', function(data) {
             chinese.value = JSON.parse(data).hitokoto
         }, function() {
-            alert('rand api wrong')
+            note('出错了，请自己填写中文吧 :)')
         })
     }, false)
 
@@ -69,9 +69,14 @@ document.addEventListener('DOMContentLoaded', function() {
             return
         }
         ajax(api +'data.php?f=translate&q='+ decodeURIComponent(cn), function(data) {
-            english.value = JSON.parse(data).translation[0]
+            data = JSON.parse(data);
+            if (parseInt(data.errorCode) === 0) {
+                english.value = data.translation[0]
+            } else {
+                note('有道翻译有问题，请检查下文字或者自行翻译 :)')
+            }
         }, function() {
-            alert('translate api wrong')
+            note('请求有道翻译挂了，请自行翻译 :)')
         })
     }, false)
 
@@ -81,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     file.addEventListener('change', function(e) {
         fileData = e.target.files[0];
-        select.innerHTML = fileData.name;
+        select.innerHTML = '已选择：'+ fileData.name;
         select.classList.add('active')
     })
 
@@ -90,12 +95,12 @@ document.addEventListener('DOMContentLoaded', function() {
             en = english.value;
 
         if (!fileData) {
-            note('请选择图片')
+            note('请选择图片 :)')
             return
         }
 
         if (cn.length <= 0 || en.length <= 0) {
-            note('中英文字幕没有填写完整')
+            note('中英文字幕没有填写完整 :)')
             return
         }
 
@@ -158,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
     select.addEventListener('drop', function(e) {
         e.preventDefault()
         fileData = e.dataTransfer.files[0];
-        this.innerHTML = fileData.name;
+        this.innerHTML = '已选择：'+ fileData.name;
         this.classList.add('active')
     }, false)
 
