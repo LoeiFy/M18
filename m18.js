@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
     translate.addEventListener('click', function() {
         var cn = chinese.value;
         if (cn.length <= 0) {
-            alert('no chinese')
+            note('没有要翻译的中文 :)')
             return
         }
         ajax(api +'data.php?f=translate&q='+ decodeURIComponent(cn), function(data) {
